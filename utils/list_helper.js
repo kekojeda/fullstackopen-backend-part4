@@ -19,7 +19,7 @@ const favoriteBlog = (blogList) => {
 
   let blogFav = blogList[0];
 
-  console.log(`Blog favorito hasta el momento ${blogFav.title}`);
+  // console.log(`Blog favorito hasta el momento ${blogFav.title}`);
 
   blogList.forEach((blog) => {
     if (blog.likes >= blogFav.likes) {
