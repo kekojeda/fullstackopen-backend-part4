@@ -78,6 +78,25 @@ test.only("blog without likes is equals to 0  ", async () => {
     assert.strictEqual(lastBlog.likes, 0);
   });
 
+  test.only("blog without title or url property, receives 400 Bad Request error", async () => {
+    const newBlog = {
+      title: "Prueba blog sin autor",
+      author: "keko author",
+    //   url: "direccionweb.com",
+     };
+  
+    await api
+      .post("/api/blogs")
+      .send(newBlog)
+      .expect(400)
+  
+    // const response = await api.get("/api/blogs");
+
+    // const lastBlog = response.body[response.body.length - 1]
+
+    // assert.strictEqual(lastBlog.likes, 0);
+  });
+
 // test('the first note is about HTTP methods', async () => {
 //     const response = await api.get('/api/notes')
 
